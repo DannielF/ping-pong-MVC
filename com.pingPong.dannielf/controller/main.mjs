@@ -23,17 +23,25 @@ const boardView = new BoardView({ canvas, board });
 const ball = new Ball({ x: 400, y: 100, radius: 10, board });
 
 document.addEventListener('keydown', (event) => {
-  switch (event.key) {
-    case 'ArrowUp':
-      bar.up();
-    case 'ArrowDown':
-      bar.down();
-    case 'w':
-      bar_2.up();
-    case 's':
-      bar_2.down();
-    case ' ':
-      board.playing = !board.playing;
+  if (event.key == "ArrowUp") {
+    event.preventDefault();
+    bar.up();
+  }
+  else if (event.key == "ArrowDown") {
+    event.preventDefault();
+    bar.down();
+  }
+  else if (event.key === "w") {
+    event.preventDefault();
+    bar_2.up();
+  }
+  else if (event.key === "s") {
+    event.preventDefault();
+    bar_2.down();
+  }
+  else if (event.key === " ") {
+    event.preventDefault();
+    board.playing = !board.playing;
   }
 });
 

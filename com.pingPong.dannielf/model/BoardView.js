@@ -33,7 +33,11 @@ class BoardView {
   }
 
   play() {
-    this.clean();
+    if (this.board.playing) {
+      this.clean();
+      this.draw();
+      this.board.ball.move();
+    }
     this.draw();
   }
 }

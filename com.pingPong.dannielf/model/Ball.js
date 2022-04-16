@@ -13,6 +13,12 @@ class Ball {
     this.board = board;
     this.board.ball = this;
     this.kind = 'circle';
+    this.direction = 1;
+  }
+
+  move() {
+    this.x += (this.speed_x * this.direction);
+    this.y += (this.speed_y * this.direction);
   }
 }
 

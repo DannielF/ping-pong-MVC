@@ -9,7 +9,8 @@ class Board {
   }
 
   get elements() {
-    let elements = this.bars;
+    // fix garbage collection problem
+    let elements = this.bars.map(bar => bar);
     elements.push(this.ball);
     return elements;
   }

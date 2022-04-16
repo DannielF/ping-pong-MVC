@@ -13,14 +13,14 @@ class Bar {
     this.board = board;
     this.board.bars.push(this);
     this.kind = 'rectangle';
-    this.speed = 10;
+    this.speed = 5;
   }
 
   down() {
     this.y += this.speed;
   }
 
-  up () {
+  up() {
     this.y -= this.speed;
   }
 }
