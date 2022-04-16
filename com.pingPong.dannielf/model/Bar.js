@@ -1,3 +1,8 @@
+/**
+ * Create a bar object
+ * @version 1.0.0
+ * @since 04/16/2022
+ */
 class Bar {
   constructor({
     x,
@@ -16,10 +21,18 @@ class Bar {
     this.speed = 5;
   }
 
+  /**
+   * Move the bar
+   * Axis y
+   */
   down() {
     this.y += this.speed;
   }
 
+  /**
+   * Move the bar
+   * Axis y
+   */
   up() {
     this.y -= this.speed;
   }

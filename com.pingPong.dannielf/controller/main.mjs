@@ -3,6 +3,9 @@ import BoardView from '../model/BoardView.js';
 import Bar from '../model/Bar.js';
 import Ball from '../model/Ball.js';
 
+/**
+ * Instances of objects
+ */
 const board = new Board({ width: 800, height: 400 });
 const bar = new Bar({ 
   x: 20,
@@ -22,6 +25,10 @@ const canvas = document.getElementById('canvas');
 const boardView = new BoardView({ canvas, board });
 const ball = new Ball({ x: 400, y: 100, radius: 10, board });
 
+/**
+ * Listener for the event keydown, to move the bars
+ * and pause the game
+ */
 document.addEventListener('keydown', (event) => {
   if (event.key == "ArrowUp") {
     event.preventDefault();
@@ -45,6 +52,10 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+/**
+ * main, to keep the game running
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame
+ */
 const main = () => {
   boardView.play();
   window.requestAnimationFrame(main);
